@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="text-warning">Upload,View & Delete File</h1>
+  <input type="file" accept="image/*" id="customFile" (change)="selectFile($event)" placeholder="File To Upload">
+  <button class="btn btn-success" (click)="upload()">Save File</button>
+  <br><br>
+  <hr>
+  <div *ngFor="let uf of uploadedFiles">
+    <table class="container">
+      <tr>
+        <td><img [src]=preFilePath+uf height="50px" width="35px"></td>
+        <td><button (click)="viewFile(uf)" class="btn btn-primary btn-sm">View</button></td>
+        <td><button (click)="deleteFile(uf)" class="btn btn-danger btn-sm">Delete</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
